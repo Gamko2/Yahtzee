@@ -15,28 +15,33 @@ import static jdk.nashorn.internal.objects.NativeMath.random;
  * @author Marc
  */
 public class Dice {
-private int number;
-private boolean hold = false;
 
+    private int number;
+    private boolean locked = false;
 
+    public int getNumber() {
+        return number;
+    }
 
-public int getNumber(){
-    return number;
-}
+    public void rollDice() {
+        if (!this.isLocked()){
+        Random rand = new Random();
+        this.number = rand.nextInt(6) + 1;
+        }
 
-public void rollDice(){
-   Random rand = new Random(); 
-   int diceRoll =  rand.nextInt(6 - 1 + 1) + 1;
-   this.number = diceRoll;
-}
+    }
 
-public void reverseHold(){
-    this.hold = !this.hold;
-}
-
-public boolean getHold(){
-    return hold;
-}
+    public void lock() {
+        this.locked = true;
+    }
     
     
+   public void unlock(){
+       this.locked = false;
+   }
+
+    public boolean isLocked() {
+        return locked;
+    }
+
 }

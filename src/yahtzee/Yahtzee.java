@@ -17,9 +17,9 @@ public class Yahtzee {
     public static void main(String[] args) {
         DiceBox diceBox = new DiceBox();
         diceBox.rollDices();
-        diceBox.changeHold(1);
-        diceBox.changeHold(2);
-        diceBox.changeHold(3);
+        diceBox.lockDice(1);
+        diceBox.lockDice(2);
+        diceBox.lockDice(0);
         diceBox.rollDices();
     }
 

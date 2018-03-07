@@ -21,18 +21,13 @@ public class DiceBox {
     
     public void rollDices(){
         for (Dice dice : dices) {
-            if (dice.getHold()== false) {
-                dice.rollDice();
-                System.out.println(dice.getNumber());
-            }
-            else {
-                System.out.println(dice.getNumber());
-            }
+           dice.rollDice();
+           System.out.println(dice.getNumber());
         }
         System.out.println();
     }
     
-    public void changeHold(int i){
-        dices[i].reverseHold();
+    public void lockDice(int i){
+        dices[i].lock();
     }
 }
