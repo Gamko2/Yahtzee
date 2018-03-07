@@ -15,7 +15,12 @@ public class Yahtzee {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        DiceBox diceBox = new DiceBox();
+        diceBox.rollDices();
+        diceBox.changeHold(1);
+        diceBox.changeHold(2);
+        diceBox.changeHold(3);
+        diceBox.rollDices();
     }
-    
+
 }
