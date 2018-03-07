@@ -5,10 +5,7 @@
  */
 package yahtzee;
 
-import static java.lang.Math.random;
-import static java.lang.StrictMath.random;
 import java.util.Random;
-import static jdk.nashorn.internal.objects.NativeMath.random;
 
 /**
  *
@@ -23,22 +20,20 @@ public class Dice {
         return number;
     }
 
-    public void rollDice() {
-        if (!this.isLocked()){
-        Random rand = new Random();
-        this.number = rand.nextInt(6) + 1;
+    public void roll() {
+        if (!this.isLocked()) {
+            Random rand = new Random();
+            this.number = rand.nextInt(6) + 1;
         }
-
     }
 
     public void lock() {
         this.locked = true;
     }
-    
-    
-   public void unlock(){
-       this.locked = false;
-   }
+
+    public void unlock() {
+        this.locked = false;
+    }
 
     public boolean isLocked() {
         return locked;

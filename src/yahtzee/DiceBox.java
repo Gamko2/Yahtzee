@@ -11,23 +11,21 @@ package yahtzee;
  */
 public class DiceBox {
 
-   private Dice[] dices = new Dice[5];
-   
-   DiceBox(){
-       for (int i = 0 ; i<5 ; i++){
-           dices[i] = new Dice();
-       }
-   }
-    
-    public void rollDices(){
-        for (Dice dice : dices) {
-           dice.rollDice();
-           System.out.println(dice.getNumber());
+    private Dice[] dices = new Dice[5];
+
+    public DiceBox() {
+        for (int i = 0; i < 5; i++) {
+            dices[i] = new Dice();
         }
-        System.out.println();
     }
-    
-    public void lockDice(int i){
+
+    public void rollDices() {
+        for (Dice dice : dices) {
+            dice.roll();
+        }
+    }
+
+    public void lockDice(int i) {
         dices[i].lock();
     }
 }
