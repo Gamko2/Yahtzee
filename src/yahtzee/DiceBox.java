@@ -5,6 +5,9 @@
  */
 package yahtzee;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Marc
@@ -27,5 +30,31 @@ public class DiceBox {
 
     public void lockDice(int i) {
         dices[i].lock();
+    }
+
+    public int countNumber(int number) {
+        int count = 0;
+        for (Dice dice : dices) {
+            if (dice.getNumber() == number) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public Map<Integer, Integer> countAllNumbers() {
+        Map<Integer, Integer> countedResults = new HashMap<Integer, Integer>();
+        for (int i = 1; i <= 6; i++) {
+            countedResults.put(i, 0);
+        }
+        for (Dice dice : dices) {
+            countedResults.put(dice.getNumber(), countedResults.get(dice.getNumber()) + 1);
+        }
+        return countedResults;
+    }
+    public void displayRolls(){
+        for (Dice dice : dices){
+            System.out.println(dice.getNumber());
+        }
     }
 }
