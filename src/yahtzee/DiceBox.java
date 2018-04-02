@@ -22,6 +22,10 @@ public class DiceBox {
         }
     }
 
+    public Dice[] getDices(){
+        return dices;
+    }
+    
     public void rollDices() {
         for (Dice dice : dices) {
             dice.roll();
