@@ -9,14 +9,19 @@ package yahtzee;
  *
  * @author Marc
  */
-public class Aces extends Rule {
-private String name = "aces";
+public class UpperSection extends Rule {
 
+    private int number;
+
+    public UpperSection(String name, int number) {
+        super(name);
+        this.number = number;
+    }
 
     @Override
     public int calculatePoints(DiceBox dicebox) {
-      int result = 0;
-      return result = dicebox.countNumber(1) * 1;
+        int result = 0;
+        return result = dicebox.countNumber(number) * number;
     }
-    
+
 }

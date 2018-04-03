@@ -13,7 +13,10 @@ import java.util.Map;
  */
 public class FullHouse extends Rule {
 
-    private String name = "Full House";
+
+    public FullHouse(String name) {
+        super(name);
+    }
 
     @Override
     public int calculatePoints(DiceBox dicebox) {

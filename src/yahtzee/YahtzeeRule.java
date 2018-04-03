@@ -13,7 +13,11 @@ import java.util.Map;
  */
 public class YahtzeeRule extends Rule {
 
-    private String name = "Yahtzee";
+    
+
+    public YahtzeeRule(String name) {
+        super(name);
+    }
 
     @Override
     public int calculatePoints(DiceBox dicebox) {

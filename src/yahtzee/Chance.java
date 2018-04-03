@@ -11,7 +11,10 @@ package yahtzee;
  */
 public class Chance extends Rule {
 
-    private String name = "Chance";
+
+    public Chance(String name) {
+        super(name);
+    }
 
     @Override
     public int calculatePoints(DiceBox dicebox) {

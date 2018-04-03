@@ -10,6 +10,10 @@ package yahtzee;
  * @author Marc
  */
 public abstract class Rule {
+    
+    public Rule (String name ){
+        this.name = name;
+    }
 
     private String name;
 

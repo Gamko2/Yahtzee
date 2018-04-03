@@ -11,7 +11,11 @@ package yahtzee;
  */
 public class SmallStraight extends Rule {
 
-    private String name = "SmallStraight";
+   
+
+    public SmallStraight(String name) {
+        super(name);
+    }
 
     @Override
     public int calculatePoints(DiceBox dicebox) {

@@ -9,13 +9,19 @@ package yahtzee;
  *
  * @author Marc
  */
-public class FourOfaKind extends Rule {
-    private String name = "FourOfaKind";
+public class Pash extends Rule {
+
+    private int number;
+
+    public Pash(String name, int number) {
+        super(name);
+        this.number = number;
+    }
 
     @Override
-        public int calculatePoints(DiceBox dicebox) {
+    public int calculatePoints(DiceBox dicebox) {
         for (int i = 1; i <= 6; i++) {
-            if (dicebox.countNumber(i) == 4) {
+            if (dicebox.countNumber(i) == number) {
                 int result = 0;
                 for (Dice dice : dicebox.getDices()) {
                     result += dice.getNumber();
@@ -24,6 +30,6 @@ public class FourOfaKind extends Rule {
             }
         }
         return 0;
+
     }
-    
 }
