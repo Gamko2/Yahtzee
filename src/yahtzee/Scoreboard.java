@@ -15,6 +15,22 @@ import java.util.Map;
  * @author Marc
  */
 public class Scoreboard {
+    
+    public Scoreboard(){
+    points.put(new UpperSection("Aces", 1) , -1); 
+    points.put(new UpperSection("Twos", 2) , -1);  
+    points.put(new UpperSection("Threes", 3) , -1);  
+    points.put(new UpperSection("Fours", 4) , -1);  
+    points.put(new UpperSection("Fives", 5) , -1);  
+    points.put(new UpperSection("Sixes", 6) , -1);
+    points.put(new XOfAKind("Three Of A Kind",3) , -1);  
+    points.put(new XOfAKind("Four Of A Kind",4) , -1); 
+    points.put (new FullHouse("Full House"),-1);
+    points.put (new SmallStraight("Small Straight"),-1);
+    points.put (new LargeStraight("Large Straight"),-1);
+    points.put (new YahtzeeRule("Yahtzee"),-1);
+    points.put (new Chance("Chance"),-1);
+    }
 
     private Map<Rule, Integer> points = new HashMap<Rule, Integer>();
 

@@ -9,11 +9,11 @@ package yahtzee;
  *
  * @author Marc
  */
-public class Pash extends Rule {
+public class XOfAKind extends Rule {
 
     private int number;
 
-    public Pash(String name, int number) {
+    public XOfAKind(String name, int number) {
         super(name);
         this.number = number;
     }
