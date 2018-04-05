@@ -21,6 +21,12 @@ public class DiceBox {
             dices[i] = new Dice();
         }
     }
+    
+    public void resetDice(){
+     for (Dice dice : dices)  {
+         dice.unlock();
+     } 
+    }
 
     public Dice[] getDices(){
         return dices;
@@ -30,6 +36,10 @@ public class DiceBox {
         for (Dice dice : dices) {
             dice.roll();
         }
+    }
+    
+    public void unlocDice(int i){
+        dices[i].unlock();
     }
 
     public void lockDice(int i) {
