@@ -65,7 +65,7 @@ public class Game {
 
     public void unlockDice(int i) {
         if (numberOfRolls > 0) {
-            diceBox.unlocDice(i);
+            diceBox.unlockDice(i);
         }
     }
 
