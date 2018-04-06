@@ -38,7 +38,7 @@ public class DiceBox {
         }
     }
     
-    public void unlocDice(int i){
+    public void unlockDice(int i){
         dices[i].unlock();
     }
 
