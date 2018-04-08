@@ -22,7 +22,7 @@ public class DiceBox {
         }
     }
     
-    public void resetDice(){
+    public void resetDices(){
      for (Dice dice : dices)  {
          dice.unlock();
      } 
