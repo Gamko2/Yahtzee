@@ -5,6 +5,9 @@
  */
 package yahtzee;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Map;
 
 /**
@@ -16,14 +19,37 @@ public class Yahtzee {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        DiceBox diceBox = new DiceBox();
-        diceBox.rollDices();
-        diceBox.displayRolls();
-        Map<Integer, Integer> results = diceBox.countAllNumbers();
-        System.out.println(results.keySet());
-        System.out.println(results.values());
-        System.out.println(diceBox.countNumber(5));
+    boolean running = true;
+     
+    public void stopRunning(){
+        running = false;
+    }
+     public void runGame() throws IOException{
+        System.out.println("Welcome to Yahtzee");
+        Game game = new Game();
+        CommandInvoker commandInvoker = new CommandInvoker();
+        commandInvoker.addCommand(new ExitCommand(this));
+           while (running) {
+            System.out.println("Enter your command");
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            String input = br.readLine();
+            commandInvoker.executeCommand(input);
+            
+        }   
+     }
+    
+    
+    public static void main(String[] args) throws IOException {
+       Yahtzee yahtzee = new Yahtzee();
+       yahtzee.runGame();
+        
+        
+        
+        
+        
+        
+
+   
     }
 
 }
