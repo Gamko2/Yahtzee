@@ -18,7 +18,7 @@ public class ExitCommand extends Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(String string) {
         System.out.println("Thanks for playing Yahtzee");  
         consoleApp.stopRunning();
     }

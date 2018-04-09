@@ -9,18 +9,30 @@ package yahtzee;
  *
  * @author Marc
  */
-public abstract class Rule {
-    
-    public Rule (String name ){
+public abstract class Rule  {
+
+    private static int count = 0;
+    private int number;
+    private String name;
+
+    public Rule(String name) {
         this.name = name;
+        number = count++;
     }
 
-    private String name;
+    @Override
+    public int hashCode() {
+        return number;
+    }
 
     public abstract int calculatePoints(DiceBox dicebox);
 
     @Override
     public String toString() {
+        return name;
+    }
+
+    public String getName() {
         return name;
     }
 

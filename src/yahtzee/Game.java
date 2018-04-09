@@ -38,12 +38,12 @@ public class Game {
 
         if (currentPlayer < players.size() - 1) {
             currentPlayer++;
-        }
-
-        if (players.get(players.size() - 1).getScoreboard().availableFields().length == 0) {
-            endGame();
         } else {
-            currentPlayer = 0;
+            if (players.get(players.size() - 1).getScoreboard().availableFields().length == 0) {
+                endGame();
+            } else {
+                currentPlayer = 0;
+            }
         }
 
         diceBox.resetDices();
@@ -51,10 +51,11 @@ public class Game {
     }
 
     public void rollDices() {
-        if (numberOfRolls < 3) {
+        if (numberOfRolls < 200) {
             diceBox.rollDices();
+            numberOfRolls++;
         }
-        numberOfRolls++;
+
     }
 
     public void holdDie(int i) {
@@ -73,15 +74,30 @@ public class Game {
         players.get(currentPlayer).getScoreboard().writePoints(rule, diceBox);
         newRound();
     }
-    
-    public boolean isRunning(){
+
+    public boolean isRunning() {
         return isRunning;
     }
 
     public ArrayList<Player> getPlayers() {
         return players;
     }
-    
-    
+
+    public int getNumberOfRolls() {
+        return numberOfRolls;
+    }
+
+    public DiceBox getDicebox() {
+        return diceBox;
+    }
+
+    public Player getCurrentPlayer() {
+        if (players.size() != 0) {
+            return players.get(currentPlayer);
+        } else {
+            return null;
+        }
+
+    }
 
 }

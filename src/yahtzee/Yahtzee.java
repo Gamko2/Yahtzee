@@ -29,8 +29,21 @@ public class Yahtzee {
         Game game = new Game();
         CommandInvoker commandInvoker = new CommandInvoker();
         commandInvoker.addCommand(new ExitCommand(this));
+        commandInvoker.addCommand(new AddPlayerCommand(game));
+        commandInvoker.addCommand(new StartGameCommand(game));
+        commandInvoker.addCommand(new EndGameCommand(game));
+        commandInvoker.addCommand(new RollCommand(game));
+        commandInvoker.addCommand(new LockDiceCommand(game));
+        commandInvoker.addCommand(new UnlockDiceCommand(game));
+        commandInvoker.addCommand(new PrintScoreboardCommand(game));
+        commandInvoker.addCommand(new WritePointsCommand(game));
            while (running) {
-            System.out.println("Enter your command");
+            if (game.getCurrentPlayer() != null && game.isRunning()){
+            System.out.println("Enter your command " + game.getCurrentPlayer().getName());    
+            }else {
+                System.out.println("Enter your command");
+            }
+            
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             String input = br.readLine();
             commandInvoker.executeCommand(input);

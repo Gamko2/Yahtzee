@@ -68,7 +68,11 @@ public class DiceBox {
     }
     public void displayRolls(){
         for (Dice dice : dices){
-            System.out.println(dice.getNumber());
+            System.out.print("   " + dice.getNumber());
+            if (dice.isLocked()){
+                System.out.print("L");
+            }
         }
+        System.out.println("");
     }
 }

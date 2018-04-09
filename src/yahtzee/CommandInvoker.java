@@ -22,7 +22,7 @@ public class CommandInvoker {
     public void executeCommand(String string) {
         Command command = getCommand(string);
         if (command!= null){
-            command.execute();
+            command.execute(string);
         }else {
             System.out.println("Invalid Command");
         }

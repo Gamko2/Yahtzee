@@ -19,9 +19,9 @@ public class SmallStraight extends Rule {
 
     @Override
     public int calculatePoints(DiceBox dicebox) {
-        if ((dicebox.countNumber(1) == 1 && dicebox.countNumber(2) == 1 && dicebox.countNumber(3) == 1 && dicebox.countNumber(4) == 1)
-                || (dicebox.countNumber(2) == 1 && dicebox.countNumber(3) == 1 && dicebox.countNumber(4) == 1 && dicebox.countNumber(5) == 1)
-                || (dicebox.countNumber(3) == 1 && dicebox.countNumber(4) == 1 && dicebox.countNumber(5) == 1 && dicebox.countNumber(6) == 1)) {
+        if ((dicebox.countNumber(1) >= 1 && dicebox.countNumber(2) >= 1 && dicebox.countNumber(3) >= 1 && dicebox.countNumber(4) >= 1)
+                || (dicebox.countNumber(2) >= 1 && dicebox.countNumber(3) >= 1 && dicebox.countNumber(4) >= 1 && dicebox.countNumber(5) >= 1)
+                || (dicebox.countNumber(3) >= 1 && dicebox.countNumber(4) >= 1 && dicebox.countNumber(5) >= 1 && dicebox.countNumber(6) >= 1)) {
             return 30;
         }
         return 0;
