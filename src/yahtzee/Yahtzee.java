@@ -5,6 +5,16 @@
  */
 package yahtzee;
 
+import yahtzee.commands.UnlockDiceCommand;
+import yahtzee.commands.WritePointsCommand;
+import yahtzee.commands.StartGameCommand;
+import yahtzee.commands.RollCommand;
+import yahtzee.commands.PrintScoreboardCommand;
+import yahtzee.commands.LockDiceCommand;
+import yahtzee.commands.ExitCommand;
+import yahtzee.commands.AddPlayerCommand;
+import yahtzee.commands.EndGameCommand;
+import yahtzee.commands.CommandInvoker;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

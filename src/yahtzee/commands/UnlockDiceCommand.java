@@ -3,28 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package yahtzee;
+package yahtzee.commands;
+
+import yahtzee.Game;
+import yahtzee.commands.Command;
 
 /**
  *
  * @author Marc
  */
-public class LockDiceCommand extends Command {
-
+public class UnlockDiceCommand extends Command {
     private Game game;
 
-    public LockDiceCommand(Game game) {
-        super("lock");
+    public UnlockDiceCommand(Game game) {
+        super("unlock");
         this.game = game;
     }
 
     @Override
     public void execute(String string) {
-        String[] words = string.split(" ");
+               String[] words = string.split(" ");
         for (int i = 1; i < words.length; i++) {
             int tmp = Integer.parseInt(words[i]);
-            game.holdDie(tmp - 1);
-        }
+            game.unlockDice(tmp - 1);
+        } 
     }
-
+    
 }

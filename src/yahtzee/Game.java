@@ -5,6 +5,7 @@
  */
 package yahtzee;
 
+import yahtzee.rules.Rule;
 import java.util.ArrayList;
 
 /**
@@ -98,6 +99,10 @@ public class Game {
             return null;
         }
 
+    }
+    
+    public void setRunning(boolean bool){
+        isRunning = bool;
     }
 
 }

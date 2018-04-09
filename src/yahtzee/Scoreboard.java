@@ -5,6 +5,13 @@
  */
 package yahtzee;
 
+import yahtzee.rules.YahtzeeRule;
+import yahtzee.rules.XOfAKind;
+import yahtzee.rules.SmallStraight;
+import yahtzee.rules.Rule;
+import yahtzee.rules.LargeStraight;
+import yahtzee.rules.FullHouse;
+import yahtzee.rules.Chance;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.HashMap;

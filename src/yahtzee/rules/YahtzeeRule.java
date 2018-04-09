@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package yahtzee;
+package yahtzee.rules;
 
+import yahtzee.rules.Rule;
 import java.util.Map;
+import yahtzee.DiceBox;
 
 /**
  *

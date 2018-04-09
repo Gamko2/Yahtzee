@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package yahtzee;
+package yahtzee.commands;
+
+import yahtzee.Game;
+import yahtzee.commands.Command;
 
 /**
  *
@@ -20,7 +23,7 @@ public class EndGameCommand extends Command {
     @Override
     public void execute(String string) {
         if (game.isRunning()){
-            game.isRunning = false;
+            game.setRunning(false);
         }else {
             System.out.println("Can't end a game that hasn't even started friend!");
         }

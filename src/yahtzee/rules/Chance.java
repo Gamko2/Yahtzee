@@ -3,29 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package yahtzee;
+package yahtzee.rules;
 
-import java.util.Map;
+import yahtzee.Dice;
+import yahtzee.DiceBox;
 
 /**
  *
  * @author Marc
  */
-public class FullHouse extends Rule {
+public class Chance extends Rule {
 
 
-    public FullHouse(String name) {
+    public Chance(String name) {
         super(name);
     }
 
     @Override
     public int calculatePoints(DiceBox dicebox) {
-        Map<Integer, Integer> countedResults = dicebox.countAllNumbers();
-        if (countedResults.containsValue(2) && countedResults.containsValue(3)) {
-            return 25;
-        } else {
-            return 0;
+        int result = 0;
+        for (Dice dice : dicebox.getDices()) {
+            result += dice.getNumber();
         }
+        return result;
     }
 
 }

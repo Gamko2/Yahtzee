@@ -5,6 +5,8 @@
  */
 package yahtzee;
 
+import yahtzee.rules.Rule;
+
 /**
  *
  * @author Marc

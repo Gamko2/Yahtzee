@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package yahtzee;
+package yahtzee.commands;
+
+import yahtzee.Yahtzee;
+import yahtzee.commands.Command;
 
 /**
  *
